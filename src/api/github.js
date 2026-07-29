@@ -3,9 +3,9 @@ const CACHE_PREFIX = 'gi_cache_';
 
 function getToken() {
   try {
-    return localStorage.getItem('gi_token') || '';
+    return localStorage.getItem('gi_token') || import.meta.env.VITE_GITHUB_TOKEN || '';
   } catch {
-    return '';
+    return import.meta.env.VITE_GITHUB_TOKEN || '';
   }
 }
 
